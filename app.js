@@ -12,20 +12,6 @@ app.set("view engine", "ejs");
 const assetsPublic = path.join(__dirname, "public");
 app.use(express.static(assetsPublic));
 
-// Sample data
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amado",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-]
-
 // Routes
 app.use("/", indexRouter);
 

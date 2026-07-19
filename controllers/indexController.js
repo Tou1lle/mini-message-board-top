@@ -1,5 +1,7 @@
+const data = require("./../samples");
+
 const indexGet = (req, res) => {
-  res.send("Welcome to homepage - Controller");
+  res.render("index", { title: "Mini Messageboard", messages: data.messages });
 }
 
 module.exports = {
