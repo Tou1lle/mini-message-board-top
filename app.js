@@ -3,6 +3,7 @@ const path = require("node:path");
 const app = express();
 const PORT = 3000;
 const indexRouter = require("./routes/indexRoute");
+const newRouter = require("./routes/newRoute");
 
 // Set EJS as view engine
 app.set("views", path.join(__dirname, "views"));
@@ -13,6 +14,7 @@ const assetsPublic = path.join(__dirname, "public");
 app.use(express.static(assetsPublic));
 
 // Routes
+app.use("/new", newRouter);
 app.use("/", indexRouter);
 
 // Start server
