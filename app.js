@@ -3,7 +3,7 @@ const path = require("node:path");
 const app = express();
 const PORT = 3000;
 const indexRouter = require("./routes/indexRoute");
-const newRouter = require("./routes/newRoute");
+const newFormRouter = require("./routes/newFormRoute");
 
 // Set EJS as view engine
 app.set("views", path.join(__dirname, "views"));
@@ -12,9 +12,10 @@ app.set("view engine", "ejs");
 // Make public styles, images, js available for page
 const assetsPublic = path.join(__dirname, "public");
 app.use(express.static(assetsPublic));
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use("/new", newRouter);
+app.use("/new", newFormRouter);
 app.use("/", indexRouter);
 
 // Start server
