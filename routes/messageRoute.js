@@ -1,12 +1,7 @@
 const { Router } = require("express");
 const router = Router();
-const { messages } = require("./../samples");
+const controller = require("./../controllers/messageController");
 
-router.get("/:id", (req, res) => {
-  const messageID = Number(req.params.id) - 1;
-  const messageShowed = messages[messageID];
-
-  res.render("message", { title: "Message", message: messageShowed });
-});
+router.get("/:id", controller.getDetails);
 
 module.exports = router;
