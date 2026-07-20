@@ -1,0 +1,56 @@
+/* Constants and reset */
+:root {
+  --base-font: Arial, Helvetica, sans-serif;
+  --color-primary: #0071BC;
+  --color-primary-darker: #004f84;
+  --color-gray-lightest: #f2f2f2;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mutual styles */
+body {
+  font-family: var(--base-font);
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  background-color: var(--color-primary-darker);
+  color: white;
+  padding: 10px;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.main-content {
+  padding: 10px;
+}
+
+.navlink-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: var(--color-primary);
+}
+
+.navlink-container a {
+  text-decoration: none;
+  display: flex;
+  background-color: var(--color-gray-lightest);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}

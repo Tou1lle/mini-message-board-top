@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-</head>
+
+<%- include("partials/head"), { title } %>
+
 <body>
-  <div>
-    <h1>Details</h1>
-    <div>
-      <p>From</p>
-      <p><%= message.user %></p>
+  <h1>Details</h1>
+  <div class="container">
+
+    <div class="main-container">
+      <h2>Message details</h2>
+      <div class="main-content">
+        <div>
+          <p>From</p>
+          <p><%= message.user %></p>
+        </div>
+        <div>
+          <p>Created</p>
+          <p><%= message.added %></p>
+        </div>
+        <div>
+          <p>Message:</p>
+          <p><%= message.text %></p>
+        </div>
+      </div>
     </div>
-    <div>
-      <p>Created</p>
-      <p><%= message.added %></p>
-    </div>
-    <div>
-      <p>Message:</p>
-      <p><%= message.text %></p>
-    </div>
+
+    <%- include("partials/navlink", { destination: "/", name: "Home" }) %>
+
   </div>
-  <button>
-    <a href="/">Home</a>
-  </button>
 </body>
 </html>

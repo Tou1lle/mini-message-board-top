@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-</head>
+
+<%- include("partials/head", { title })%>
+
 <body>
   <h1>Database</h1>
-  <div>
-    <h2>Created Messages</h2>
-    <div>
-      <% messages.forEach((message, index) => { %>
-        <div>
-          <h3><%= message.user %></h3>
-          <p><span>Created: </span> <%= message.added %></p>
-        </div>
-        <div>
-          <p><%= message.text %></p>
-          <button>
-            <a href="/message/<%= index+1 %>">SHOW</a>
-          </button>
-        </div>
-      <% }) %>
+  <div class="container">
+
+    <div class="main-container">
+      <h2>Created Messages</h2>
+      <div class="main-content">
+        <% messages.forEach((message, index) => { %>
+          <div>
+            <h3><%= message.user %></h3>
+            <p><span>Created: </span> <%= message.added %></p>
+          </div>
+          <div>
+            <p><%= message.text %></p>
+            <div>
+              <a href="/message/<%= index+1 %>">SHOW</a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
     </div>
-    <div>
-      <button>
-        <a href="/new">Create New Message</a>
-      </button>
-    </div>
+
+    <%- include("partials/navlink", { destination: "/new", name: "Create new message" }) %>
+
   </div>
 </body>
 </html>
