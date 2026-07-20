@@ -4,6 +4,7 @@ const app = express();
 const PORT = 3000;
 const indexRouter = require("./routes/indexRoute");
 const newFormRouter = require("./routes/newFormRoute");
+const messageRouter = require("./routes/messageRoute");
 
 // Set EJS as view engine
 app.set("views", path.join(__dirname, "views"));
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/new", newFormRouter);
+app.use("/message", messageRouter);
 app.use("/", indexRouter);
 
 // Start server
