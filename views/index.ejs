@@ -10,13 +10,16 @@
   <div>
     <h2>Created Messages</h2>
     <div>
-      <% messages.forEach(message => { %>
+      <% messages.forEach((message, index) => { %>
         <div>
           <h3><%= message.user %></h3>
           <p><span>Created: </span> <%= message.added %></p>
         </div>
         <div>
           <p><%= message.text %></p>
+          <button>
+            <a href="/message/<%= index+1 %>">SHOW</a>
+          </button>
         </div>
       <% }) %>
     </div>

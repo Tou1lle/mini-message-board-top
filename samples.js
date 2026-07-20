@@ -1,3 +1,5 @@
+const { format } = require("date-fns");
+
 // Sample data
 const messages = [
   {
@@ -12,6 +14,26 @@ const messages = [
   },
 ]
 
+const getFormattedMessages = (messages) => {
+  const formatted = messages.map(message => {
+    return {
+      ...message,
+      added: format(message.added, "Pp"),
+    }
+  })
+
+  return formatted;
+}
+
+const getFormattedMessage = (message) => {
+  return {
+    ...message,
+    added: format(message.added, "Pp"),
+  }
+}
+
 module.exports = {
   messages,
+  getFormattedMessages,
+  getFormattedMessage
 }

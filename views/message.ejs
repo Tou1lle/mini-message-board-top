@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><% title %></title>
+  <title><%= title %></title>
 </head>
 <body>
   <div>
     <h1>Details</h1>
     <div>
-      <p>From: <%= message.user %></p>
+      <p>From</p>
+      <p><%= message.user %></p>
     </div>
     <div>
-      <p>Created: <%= message.added %></p>
+      <p>Created</p>
+      <p><%= message.added %></p>
     </div>
     <div>
       <p>Message:</p>
