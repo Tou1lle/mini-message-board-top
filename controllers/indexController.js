@@ -1,7 +1,9 @@
-const { messages, getFormattedMessages } = require("./../samples");
+const { getFormattedMessages } = require("./../samples");
+const db = require("./../db/queries");
 
-const indexGet = (req, res) => {
-  res.render("index", { title: "Mini Messageboard", messages: getFormattedMessages(messages) });
+async function indexGet (req, res) {
+  const data = await db.getAllData();
+  res.render("index", { title: "Mini Messageboard", data: getFormattedMessages(data) });
 }
 
 module.exports = {
