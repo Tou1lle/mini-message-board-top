@@ -7,6 +7,10 @@ async function getAllData() {
   return data;
 }
 
+async function getSelectedData() {
+  
+}
+
 module.exports = {
   getAllData
 }

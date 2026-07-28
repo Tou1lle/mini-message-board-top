@@ -10,7 +10,7 @@
     <div class="main-container">
       <h2>Created Messages</h2>
       <div class="main-content main-index">
-        <% data.forEach((message, index) => { %>
+        <% data.forEach((message) => { %>
           <div class="index-message">
             <div class="index-top-info">
               <h3><%= message.username %></h3>
@@ -19,7 +19,7 @@
             <div class="index-bottom-info">
               <p class="index-text-message"><%= message.text %></p>
               <div class="show-index">
-                <a href="/message/<%= index+1 %>">SHOW</a>
+                <a href="/message/<%= message.id %>">SHOW</a>
               </div>
             </div>
           </div>
