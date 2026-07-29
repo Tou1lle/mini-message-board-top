@@ -13,7 +13,13 @@ async function getSelectedData(id) {
   return data;
 }
 
+async function removeSelectedData(id) {
+  const result = await db.query("DELETE FROM messages WHERE id = $1 RETURNING *", [id]);
+  return result.rows[0].username;
+}
+
 module.exports = {
   getAllData,
-  getSelectedData
+  getSelectedData,
+  removeSelectedData
 }

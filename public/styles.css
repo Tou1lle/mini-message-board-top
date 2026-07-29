@@ -99,6 +99,23 @@ h2 {
   background-color: var(--color-gray-lightest);
 }
 
+.button-container-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-container-div .delete-index a{
+  text-decoration: none;
+  color: crimson;
+  font-size: 10px;
+  opacity: 50%;
+}
+
+.delete-index a:hover {
+  opacity: 100%;
+}
+
 /* Message detail styling */
 .main-message {
   padding: 0;
