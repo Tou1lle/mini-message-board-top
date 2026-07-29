@@ -6,6 +6,12 @@ async function indexGet (req, res) {
   res.render("index", { title: "Mini Messageboard", data: getFormattedMessages(data) });
 }
 
+async function indexDelete (req, res) {
+  console.log("Delete reached!");
+  res.redirect("/");
+}
+
 module.exports = {
   indexGet,
+  indexDelete
 }
