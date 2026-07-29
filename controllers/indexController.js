@@ -7,7 +7,8 @@ async function indexGet (req, res) {
 }
 
 async function indexDelete (req, res) {
-  console.log("Delete reached!");
+  const id = req.params.id;
+  const deletedUsername = await db.deleteSelectedData(id);
   res.redirect("/");
 }
 
