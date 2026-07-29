@@ -1,10 +1,9 @@
 const { messages, getFormattedMessage } = require("./../samples");
+const db = require("./../db/queries");
 
-const getDetails = (req, res) => {
-  const messageID = Number(req.params.id) - 1;
-  const messageShowed = messages[messageID];
-
-  res.render("message", { title: "Message", message: getFormattedMessage(messageShowed) });
+async function getDetails (req, res) {
+  const data = await db.getSelectedData(req.params.id);
+  res.render("message", { title: "Message", message: getFormattedMessage(data) });
 }
 
 module.exports = {

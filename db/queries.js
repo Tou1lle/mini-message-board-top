@@ -7,10 +7,13 @@ async function getAllData() {
   return data;
 }
 
-async function getSelectedData() {
-  
+async function getSelectedData(id) {
+  const result = await db.query("SELECT * FROM messages WHERE id = $1", [id]);
+  const data = result.rows[0];
+  return data;
 }
 
 module.exports = {
-  getAllData
+  getAllData,
+  getSelectedData
 }

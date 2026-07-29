@@ -13,8 +13,9 @@ const SQL = `
 
   INSERT INTO messages (username, text, added) 
   VALUES
-  ('Tuan', 'I wanna become a developer', NULL),
-  ('Tiep', 'I wanna become more than a waiter', DEFAULT)
+  ('Tuan', 'I wanna become a developer', DEFAULT),
+  ('Tiep', 'I wanna become a content creator', DEFAULT),
+  ('Mai', 'I wanna become a creative maker', DEFAULT)
 `;
 
 async function main() {
