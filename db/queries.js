@@ -13,6 +13,11 @@ async function getSelectedData(id) {
   return data;
 }
 
+async function insertData({ username, text, added }) {
+  const result = await db.query("INSERT INTO messages(username, text, added) VALUES($1, $2, $3) RETURNING *", [username, text, added]);
+  return result.rows[0];
+}
+
 async function deleteSelectedData(id) {
   const result = await db.query("DELETE FROM messages WHERE id = $1 RETURNING *", [id]);
   return result.rows[0].username;
@@ -21,5 +26,6 @@ async function deleteSelectedData(id) {
 module.exports = {
   getAllData,
   getSelectedData,
+  insertData,
   deleteSelectedData
 }

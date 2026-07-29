@@ -1,12 +1,12 @@
-const { messages } = require("./../samples");
+const db = require("./../db/queries");
 
 const getPage = (req, res) => {
   res.render("form", { title: "New Message" })
 }
 
-const postNew = (req, res) => {
-  const { text, user } = req.body;
-  messages.push({ text, user, added: new Date() });
+async function postNew (req, res) {
+  const { username, text } = req.body;
+  await db.insertData({ username, text, added: new Date() });
   res.redirect("/");
 }
 
